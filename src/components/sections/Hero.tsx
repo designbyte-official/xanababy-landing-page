@@ -48,9 +48,9 @@ const Hero: React.FC = () => {
                 onClick={() => setIsVideoOpen(true)}
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto bg-surface group"
+                className="w-full sm:w-auto bg-surface group border-primary/20 hover:border-primary"
               >
-                <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-surface transition-colors mr-3">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-surface transition-colors mr-3">
                   <Play size={12} fill="currentColor" />
                 </div>
                 Cómo funciona

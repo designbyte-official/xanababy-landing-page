@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import DarkModeToggle from '../ui/DarkModeToggle';
+import Button from '../ui/Button';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ const Header: React.FC = () => {
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-stone-900 border-b border-border dark:border-stone-800 h-20 flex items-center"
+        className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border h-20 flex items-center"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
@@ -46,15 +47,13 @@ const Header: React.FC = () => {
               </motion.a>
             ))}
             <DarkModeToggle />
-            <motion.a 
+            <Button 
               href="#pricing"
-              className="px-6 py-2.5 rounded-full text-sm font-bold bg-primary text-white"
-              whileHover={{ scale: 1.05, backgroundColor: '#1a1a1a' }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              variant="primary"
+              size="sm"
             >
               Empezar
-            </motion.a>
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -76,7 +75,7 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden overflow-y-auto"
+            className="fixed inset-0 z-40 bg-background pt-24 px-6 md:hidden overflow-y-auto"
           >
             <div className="flex flex-col space-y-6">
               {navLinks.map((link) => (
@@ -90,13 +89,14 @@ const Header: React.FC = () => {
                   {link.name}
                 </motion.a>
               ))}
-               <motion.button 
+               <Button 
                  onClick={() => { setIsOpen(false); document.getElementById('pricing')?.scrollIntoView(); }}
-                 className="w-full px-5 py-4 mt-4 rounded-lg bg-primary text-white font-bold text-lg"
-                 whileTap={{ scale: 0.95 }}
+                 variant="primary"
+                 className="w-full mt-4"
+                 size="lg"
                 >
                 Empezar Gratis
-              </motion.button>
+              </Button>
             </div>
           </motion.div>
         )}
