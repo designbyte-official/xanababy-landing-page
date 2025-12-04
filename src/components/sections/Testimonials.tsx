@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Testimonial } from '../types';
+import { Testimonial } from '../../../types';
 
 const testimonials: Testimonial[] = [
   {
@@ -76,7 +76,7 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-white border-y border-border overflow-hidden">
+    <section id="testimonials" className="py-24 bg-background border-y border-border overflow-hidden">
       <div className="container mx-auto px-6 text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-heading text-primary mb-4">
           Más de 20,000 familias descansadas
@@ -114,22 +114,22 @@ const Testimonials: React.FC = () => {
               className="absolute w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing"
             >
               {/* Testimonial Card */}
-              <div className="bg-background p-8 md:p-12 rounded-[2.5rem] border border-border w-full h-full flex flex-col items-center justify-center text-center relative overflow-hidden group hover:border-primary/20 transition-colors">
+              <div className="bg-surface p-8 md:p-12 rounded-[2.5rem] border border-border w-full h-full flex flex-col items-center justify-center text-center relative overflow-hidden group hover:border-primary/20 transition-colors">
                 
                 {/* Background Decoration */}
-                <Quote className="absolute top-6 left-8 text-stone-200 w-24 h-24 rotate-180 -z-0 opacity-50" />
+                <Quote className="absolute top-6 left-8 text-tertiary/20 w-24 h-24 rotate-180 -z-0 opacity-50" />
                 
                 <div className="relative z-10 max-w-2xl">
                     <div className="flex justify-center gap-1 mb-6 text-secondary">
                         {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="currentColor" className="stroke-none" />)}
                     </div>
                     
-                    <p className="text-xl md:text-2xl text-stone-700 font-heading leading-relaxed italic mb-8">
+                    <p className="text-xl md:text-2xl text-text-main font-heading leading-relaxed italic mb-8">
                         "{testimonials[index].quote}"
                     </p>
                     
                     <div className="flex flex-col items-center gap-3">
-                        <div className="p-1 bg-white border border-stone-100 rounded-full">
+                        <div className="p-1 bg-surface border border-border rounded-full">
                             <img 
                             src={testimonials[index].image} 
                             alt={testimonials[index].name} 
@@ -138,7 +138,7 @@ const Testimonials: React.FC = () => {
                         </div>
                         <div>
                             <h4 className="font-bold text-primary text-lg">{testimonials[index].name}</h4>
-                            <p className="text-sm text-stone-400 font-medium uppercase tracking-wider">{testimonials[index].role}</p>
+                            <p className="text-sm text-muted font-medium uppercase tracking-wider">{testimonials[index].role}</p>
                         </div>
                     </div>
                 </div>
@@ -151,7 +151,7 @@ const Testimonials: React.FC = () => {
         <div className="flex items-center justify-center gap-4 md:gap-8 mt-6">
             <motion.button 
                 onClick={() => paginate(-1)}
-                className="w-12 h-12 rounded-full border border-stone-200 bg-white text-stone-400 hover:text-primary hover:border-primary flex items-center justify-center"
+                className="w-12 h-12 rounded-full border border-border bg-surface text-muted hover:text-primary hover:border-primary flex items-center justify-center"
                 aria-label="Previous testimonial"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -168,7 +168,7 @@ const Testimonials: React.FC = () => {
                             setIndex(i);
                         }}
                         className={`rounded-full transition-all duration-300 ${
-                            i === index ? 'bg-primary w-6 h-2.5' : 'bg-stone-200 h-2.5 w-2.5 hover:bg-stone-300'
+                            i === index ? 'bg-primary w-6 h-2.5' : 'bg-border h-2.5 w-2.5 hover:bg-tertiary'
                         }`}
                         aria-label={`Go to testimonial ${i + 1}`}
                         whileHover={{ scale: 1.2 }}
@@ -178,7 +178,7 @@ const Testimonials: React.FC = () => {
 
             <motion.button 
                 onClick={() => paginate(1)}
-                className="w-12 h-12 rounded-full border border-stone-200 bg-white text-stone-400 hover:text-primary hover:border-primary flex items-center justify-center"
+                className="w-12 h-12 rounded-full border border-border bg-surface text-muted hover:text-primary hover:border-primary flex items-center justify-center"
                 aria-label="Next testimonial"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

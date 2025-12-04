@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', // Enable dark mode with class strategy
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,22 +9,22 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#581c87', // Deep Violet (formerly xana-heading)
-          light: '#f3e8ff',   // Light Violet (formerly xana-purpleLight)
-          hover: '#4c1d95',
+          DEFAULT: 'var(--color-primary)',
+          light: 'var(--color-primary-light)',
+          hover: 'var(--color-primary-hover)',
         },
         secondary: {
-          DEFAULT: '#d97706', // Golden Amber (formerly xana-gold)
-          light: '#fffbeb',   // Light Amber (formerly xana-goldLight)
+          DEFAULT: 'var(--color-secondary)',
+          light: 'var(--color-secondary-light)',
         },
-        tertiary: '#78716c', // Stone 500 (formerly xana-secondary)
-        background: '#fafaf9', // Stone 50 (formerly xana-base)
-        surface: '#ffffff',    // White
-        border: '#e7e5e4',     // Stone 200 (formerly xana-border)
-        muted: '#64748b',      // Slate 500
+        tertiary: 'var(--color-tertiary)',
+        background: 'var(--color-background)',
+        surface: 'var(--color-surface)',
+        border: 'var(--color-border)',
+        muted: 'var(--color-muted)',
         text: {
-          main: '#334155',     // Slate 700
-          body: '#475569',     // Slate 600
+          main: 'var(--color-text-main)',
+          body: 'var(--color-text-body)',
         }
       },
       fontFamily: {

@@ -2,32 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Primary Colors */
+  --color-primary: #000000;
+  --color-primary-light: #f5f5f5;
+  --color-primary-hover: #1a1a1a;
+
+  /* Secondary Colors */
+  --color-secondary: #d97706;
+  --color-secondary-light: #fffbeb;
+
+  /* Neutral/Utility Colors */
+  --color-tertiary: #78716c;
+  --color-background: #fafaf9;
+  --color-surface: #ffffff;
+  --color-border: #e7e5e4;
+  --color-muted: #64748b;
+
+  /* Text Colors */
+  --color-text-main: #334155;
+  --color-text-body: #475569;
+}
+
+.dark {
+  /* Primary Colors - Inverted for dark mode */
+  --color-primary: #ffffff;
+  --color-primary-light: #262626;
+  --color-primary-hover: #e5e5e5;
+
+  /* Secondary Colors - Adjusted for contrast */
+  --color-secondary: #fbbf24;
+  --color-secondary-light: #451a03;
+
+  /* Neutral/Utility Colors */
+  --color-tertiary: #a8a29e;
+  --color-background: #0c0a09;
+  --color-surface: #1c1917;
+  --color-border: #292524;
+  --color-muted: #94a3b8;
+
+  /* Text Colors */
+  --color-text-main: #f1f5f9;
+  --color-text-body: #cbd5e1;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #fafaf9; 
+  background: var(--color-background); 
 }
 ::-webkit-scrollbar-thumb {
   background: #d6d3d1; 
-  border: 2px solid #fafaf9;
+  border: 2px solid var(--color-background);
   border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a29e; 
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #44403c;
+  border-color: var(--color-background);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #57534e;
+}
+
 /* Custom Selection */
 ::selection {
-  background-color: #fffbeb; /* secondary-light */
-  color: #581c87; /* primary */
+  background-color: var(--color-secondary-light);
+  color: var(--color-secondary);
 }
 
 body {
   font-family: 'Lato', sans-serif;
-  color: #334155;
-  background-color: #fafaf9;
+  color: var(--color-text-main);
+  background-color: var(--color-background);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -11,7 +11,7 @@ import Founder from './components/sections/Founder';
 
 function App() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white dark:bg-stone-950 min-h-screen transition-colors">
       <Header />
       <main>
         <Hero />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X, Star } from 'lucide-react';
+import Button from '../ui/Button';
 
 const Hero: React.FC = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -32,29 +33,28 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-              {/* Primary Button - Deep Purple */}
-              <motion.a 
+              {/* Primary Button */}
+              <Button 
                 href="#pricing" 
-                className="px-10 py-4 bg-primary text-white rounded-full text-lg font-bold w-full sm:w-auto text-center border border-transparent"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                variant="primary"
+                size="lg"
+                className="w-full sm:w-auto"
               >
                 Ver Taller Gratuito
-              </motion.a>
-              {/* Secondary Button - White with Purple Border */}
-              <motion.button 
+              </Button>
+              
+              {/* Secondary Button */}
+              <Button 
                 onClick={() => setIsVideoOpen(true)}
-                className="px-10 py-4 bg-white border border-primary/20 text-primary rounded-full text-lg font-medium w-full sm:w-auto flex items-center justify-center gap-3 group"
-                whileHover={{ scale: 1.05, backgroundColor: '#fafaf9' }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto bg-surface group"
               >
-                <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-surface transition-colors mr-3">
                   <Play size={12} fill="currentColor" />
                 </div>
                 Cómo funciona
-              </motion.button>
+              </Button>
             </div>
             
             <div className="mt-10 md:mt-12 border-t border-border pt-8 flex items-center justify-center lg:justify-start gap-4">
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
                   "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop",
                   "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
                 ].map((src, i) => (
-                  <img key={i} src={src} alt="Parent" className="w-12 h-12 rounded-full border-[3px] border-white object-cover" />
+                  <img key={i} src={src} alt="Parent" className="w-12 h-12 rounded-full border-[3px] border-surface object-cover" />
                 ))}
               </div>
               <div className="text-sm text-muted pl-2 text-left">
@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
              {/* Decorative circle - Purple Tint */}
              <div className="absolute top-10 right-10 w-64 h-64 bg-primary-light/40 rounded-full blur-3xl -z-10"></div>
              
-             <div className="rounded-t-[12rem] rounded-b-[4rem] overflow-hidden border-[8px] border-white relative z-10">
+             <div className="rounded-t-[12rem] rounded-b-[4rem] overflow-hidden border-[8px] border-surface relative z-10">
                 <img 
                   src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=2070&auto=format&fit=crop" 
                   alt="Bebé durmiendo plácidamente" 
@@ -108,7 +108,7 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="absolute bottom-8 md:bottom-12 -left-2 md:-left-8 z-20 bg-white/95 backdrop-blur border border-border py-3 px-6 md:py-4 md:px-8 rounded-2xl cursor-default"
+              className="absolute bottom-8 md:bottom-12 -left-2 md:-left-8 z-20 bg-surface/95 backdrop-blur border border-border py-3 px-6 md:py-4 md:px-8 rounded-2xl cursor-default"
             >
               <p className="text-xs text-secondary uppercase tracking-widest mb-1 font-bold">Resultado Real</p>
               <div className="flex items-baseline gap-2">
@@ -128,7 +128,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 bg-primary/90 backdrop-blur-md"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 bg-black/90 backdrop-blur-md"
             onClick={() => setIsVideoOpen(false)}
           >
             <motion.div 

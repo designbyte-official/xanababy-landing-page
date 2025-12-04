@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, Star } from 'lucide-react';
+import Button from '../ui/Button';
 
 const Pricing: React.FC = () => {
   return (
@@ -16,9 +17,9 @@ const Pricing: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
           
           {/* Free Card */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 border border-border flex flex-col hover:border-primary/30 transition-colors">
+          <div className="bg-surface rounded-3xl p-8 md:p-12 border border-border flex flex-col hover:border-primary/30 transition-colors">
             <div className="mb-8">
-              <span className="inline-block px-3 py-1 rounded-full bg-stone-100 text-stone-500 text-xs font-bold tracking-wider uppercase mb-4">Primer Paso</span>
+              <span className="inline-block px-3 py-1 rounded-full bg-primary-light text-muted text-xs font-bold tracking-wider uppercase mb-4">Primer Paso</span>
               <h3 className="text-3xl font-heading text-primary mb-4">Taller Gratuito</h3>
               <p className="text-text-body text-sm leading-relaxed">
                 Descubre por qué tu bebé se despierta y las 3 claves biológicas para evitarlo. Sin coste.
@@ -39,13 +40,12 @@ const Pricing: React.FC = () => {
               ))}
             </div>
 
-            <motion.button 
-              className="w-full py-4 rounded-full border border-stone-300 text-primary font-bold text-sm hover:bg-stone-50"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+            <Button 
+              variant="outline"
+              className="w-full border-border hover:bg-primary-light"
             >
               Ver Taller Ahora
-            </motion.button>
+            </Button>
           </div>
 
           {/* Paid Card - Purple and Gold touches */}
@@ -53,12 +53,12 @@ const Pricing: React.FC = () => {
             <div className="mb-8">
               <span className="inline-block px-3 py-1 rounded-full bg-secondary text-white text-xs font-bold tracking-wider uppercase mb-4">Recomendado</span>
               <h3 className="text-3xl font-heading text-primary mb-4">Método Completo</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
+              <p className="text-text-body text-sm leading-relaxed">
                 El programa paso a paso para enseñar a tu bebé a dormir toda la noche, con soporte real.
               </p>
             </div>
 
-            <div className="space-y-4 mb-10 flex-grow border-t border-[#fde68a] pt-8">
+            <div className="space-y-4 mb-10 flex-grow border-t border-secondary/20 pt-8">
               {[
                 "Curso completo en video (0-5 años)",
                 "App Xanababy Premium incluida",
@@ -68,22 +68,21 @@ const Pricing: React.FC = () => {
               ].map((feature, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className="mt-0.5 bg-primary rounded-full p-0.5">
-                     <Check size={12} className="text-white" />
+                     <Check size={12} className="text-surface" />
                   </div>
-                  <span className="text-stone-800 font-medium text-sm">{feature}</span>
+                  <span className="text-text-main font-medium text-sm">{feature}</span>
                 </div>
               ))}
             </div>
 
             <div className="flex flex-col gap-3">
-               <motion.button 
-                 className="w-full py-4 rounded-full bg-primary text-white font-bold text-sm hover:bg-primary-hover shadow-none"
-                 whileHover={{ scale: 1.02 }}
-                 whileTap={{ scale: 0.98 }}
+               <Button 
+                 variant="primary"
+                 className="w-full shadow-none"
                >
                   Comprar Curso - 67€
-               </motion.button>
-               <p className="text-center text-xs text-stone-500">Pago único. Acceso de por vida.</p>
+               </Button>
+               <p className="text-center text-xs text-muted">Pago único. Acceso de por vida.</p>
             </div>
           </div>
 
