@@ -28,11 +28,11 @@ const Founder: React.FC = () => {
           </div>
 
           <div className="md:w-1/2 flex justify-center">
-             <div className="relative w-72 h-80 rounded-full overflow-hidden bg-surface border border-border p-2 rotate-3 hover:rotate-0 transition-transform duration-700">
+             <div className="relative w-72 h-72 rounded-3xl overflow-hidden bg-surface border border-border p-8 rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl shadow-primary/5">
                 <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop" 
-                  alt="Founder Portrait" 
-                  className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-500"
+                  src="/logos/logo.webp" 
+                  alt="Xanababy Logo" 
+                  className="w-full h-full object-contain"
                 />
              </div>
           </div>
