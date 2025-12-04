@@ -28,7 +28,7 @@ const Founder: React.FC = () => {
           </div>
 
           <div className="md:w-1/2 flex justify-center">
-             <div className="relative w-72 h-72 rounded-3xl overflow-hidden bg-surface border border-border p-8 rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl shadow-primary/5">
+             <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-3xl overflow-hidden bg-surface border border-border p-8 rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl shadow-primary/5">
                 <img 
                   src="/logos/logo.webp" 
                   alt="Xanababy Logo" 
