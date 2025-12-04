@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
               <span className="text-xs font-bold tracking-widest uppercase text-secondary">Ciencia del Sueño Infantil</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-7xl text-primary font-heading leading-[1.05] mb-6 md:mb-8 font-medium">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl  2xl:text-7xl text-primary font-heading leading-[1.05] mb-6 md:mb-8 font-medium">
               El sueño de tu bebé <br/>
               <span className="text-muted italic font-light">no es cuestión de suerte.</span>
             </h1>
