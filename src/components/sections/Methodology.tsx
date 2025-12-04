@@ -23,8 +23,8 @@ const Methodology: React.FC = () => {
                 <div className="absolute inset-0 border-[1px] border-primary/5 rounded-[2rem] z-20 pointer-events-none"></div>
                 {/* Empathetic Mom & Baby Image */}
                 <img 
-                  src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Madre sosteniendo a su bebé con ternura" 
+                  src="/images/family-methodology.png" 
+                  alt="Familia feliz con su bebé" 
                   className="w-full h-[400px] lg:h-[600px] object-cover rounded-[2rem]"
                 />
                 
