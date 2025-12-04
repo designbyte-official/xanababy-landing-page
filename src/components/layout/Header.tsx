@@ -56,14 +56,17 @@ const Header: React.FC = () => {
             </Button>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <motion.button 
-            className="md:hidden text-primary p-2"
-            onClick={() => setIsOpen(!isOpen)}
-            whileTap={{ scale: 0.9 }}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+          {/* Mobile Actions */}
+          <div className="flex items-center gap-2 md:hidden">
+            <DarkModeToggle />
+            <motion.button 
+              className="text-primary p-2"
+              onClick={() => setIsOpen(!isOpen)}
+              whileTap={{ scale: 0.9 }}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.button>
+          </div>
         </div>
       </motion.header>
 
