@@ -48,10 +48,10 @@ const Hero: React.FC = () => {
                 onClick={() => setIsVideoOpen(true)}
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto bg-surface group border-primary/20 hover:border-primary"
+                className="w-full sm:w-auto bg-surface group border-primary/10 hover:border-primary pl-2 pr-6"
               >
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-surface transition-colors mr-3">
-                  <Play size={12} fill="currentColor" />
+                <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center group-hover:scale-110 transition-transform mr-3">
+                  <Play size={14} fill="currentColor" className="ml-0.5" />
                 </div>
                 Cómo funciona
               </Button>

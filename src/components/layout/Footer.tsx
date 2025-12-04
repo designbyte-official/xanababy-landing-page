@@ -46,6 +46,11 @@ const Footer: React.FC = () => {
              <a href="#" className="hover:text-text-main">Términos y Condiciones</a>
           </div>
           <p>&copy; {new Date().getFullYear()} Xanababy. Todos los derechos reservados.</p>
+          <div className="mt-2 md:mt-0">
+            <a href="https://studio.designbyte.dev" target="_blank" rel="noopener noreferrer" className="text-xs text-muted hover:text-primary transition-colors">
+              Redesigned by <span className="font-bold">DesignByte Studio</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
