@@ -6,7 +6,7 @@ const Methodology: React.FC = () => {
   return (
     <section id="methodology" className="py-24 md:py-32 bg-background relative overflow-hidden">
       {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-white skew-x-12 translate-x-1/3 -z-0 pointer-events-none opacity-50"></div>
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-surface skew-x-12 translate-x-1/3 -z-0 pointer-events-none opacity-50"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -20,7 +20,7 @@ const Methodology: React.FC = () => {
             transition={{ duration: 0.7 }}
           >
              <div className="relative rounded-[2rem] overflow-hidden">
-                <div className="absolute inset-0 border-[1px] border-stone-900/5 rounded-[2rem] z-20 pointer-events-none"></div>
+                <div className="absolute inset-0 border-[1px] border-primary/5 rounded-[2rem] z-20 pointer-events-none"></div>
                 {/* Empathetic Mom & Baby Image */}
                 <img 
                   src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=2070&auto=format&fit=crop" 
@@ -29,7 +29,7 @@ const Methodology: React.FC = () => {
                 />
                 
                 {/* Floating caption card */}
-                <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 bg-white/95 backdrop-blur-sm p-6 rounded-xl border border-white/50 z-30">
+                <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 bg-surface/95 backdrop-blur-sm p-6 rounded-xl border border-white/50 z-30">
                   <p className="font-heading text-lg md:text-xl text-primary italic text-center">
                     "Entender el sueño de tu hijo es el acto de amor más grande que puedes darle."
                   </p>
@@ -74,7 +74,7 @@ const Methodology: React.FC = () => {
                 }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-6 group">
-                  <div className="w-14 h-14 rounded-full border border-border bg-white flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                  <div className="w-14 h-14 rounded-full border border-border bg-surface flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
                     {item.icon}
                   </div>
                   <div>

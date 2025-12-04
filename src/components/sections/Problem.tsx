@@ -22,7 +22,7 @@ const Problem: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-white border-y border-border">
+    <section className="py-24 bg-background border-y border-border">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.h2 
@@ -54,10 +54,10 @@ const Problem: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="p-10 rounded-2xl bg-background border border-border text-center hover:bg-white hover:border-primary/30 transition-colors duration-300 group cursor-default"
+              className="p-10 rounded-2xl bg-surface border border-border text-center hover:bg-background hover:border-primary/30 transition-colors duration-300 group cursor-default"
             >
               <motion.div 
-                className="w-14 h-14 bg-white rounded-full border border-border flex items-center justify-center mx-auto mb-6 text-muted group-hover:text-primary group-hover:border-primary transition-colors"
+                className="w-14 h-14 bg-background rounded-full border border-border flex items-center justify-center mx-auto mb-6 text-muted group-hover:text-primary group-hover:border-primary transition-colors"
                 whileHover={{ rotate: [0, -10, 10, -5, 5, 0] }}
                 transition={{ duration: 0.5 }}
               >
