@@ -74,7 +74,7 @@ const Methodology: React.FC = () => {
                 }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-6 group">
-                  <div className="w-14 h-14 rounded-full border border-border bg-surface flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                  <div className="w-14 h-14 rounded-full border border-border bg-surface flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-surface group-hover:border-primary transition-all duration-300">
                     {item.icon}
                   </div>
                   <div>
