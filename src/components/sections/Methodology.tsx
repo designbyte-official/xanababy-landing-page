@@ -29,8 +29,8 @@ const Methodology: React.FC = () => {
                 />
                 
                 {/* Floating caption card */}
-                <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 bg-surface/95 backdrop-blur-sm p-6 rounded-xl border border-white/50 z-30">
-                  <p className="font-heading text-lg md:text-xl text-primary italic text-center">
+                <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 bg-surface/90 backdrop-blur-md p-6 rounded-xl border border-white/50 z-30 shadow-lg">
+                  <p className="font-heading text-lg md:text-xl text-primary font-medium italic text-center leading-relaxed">
                     "Entender el sueño de tu hijo es el acto de amor más grande que puedes darle."
                   </p>
                 </div>

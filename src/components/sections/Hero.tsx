@@ -1,10 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X, Star } from 'lucide-react';
 import Button from '../ui/Button';
 
+const heroImages = [
+  { src: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=2070&auto=format&fit=crop", isLogo: false }, // Sleeping baby
+  { src: "/logos/logo.webp", isLogo: true }, // Brand Logo
+  // { src: "https://images.unsplash.com/photo-1510154221590-ff63e90a136f?q=80&w=2070&auto=format&fit=crop", isLogo: false }, // Happy family
+];
+
 const Hero: React.FC = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-background">
@@ -81,7 +96,7 @@ const Hero: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Visual Content - Soft Image with Shape */}
+        {/* Visual Content - Carousel with Shape */}
         <motion.div 
           className="order-2 relative px-6 md:px-0"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -92,12 +107,26 @@ const Hero: React.FC = () => {
              {/* Decorative circle - Purple Tint */}
              <div className="absolute top-10 right-10 w-64 h-64 bg-primary-light/40 rounded-full blur-3xl -z-10"></div>
              
-             <div className="rounded-t-[12rem] rounded-b-[4rem] overflow-hidden border-[8px] border-surface relative z-10">
-                <img 
-                  src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Bebé durmiendo plácidamente" 
-                  className="w-full h-[400px] md:h-[650px] object-cover scale-105"
-                />
+             <div className="rounded-t-[10rem] rounded-b-[4rem] overflow-hidden border-[8px] border-surface relative z-10 h-[400px] md:h-[650px] bg-surface">
+                <AnimatePresence mode="popLayout">
+                  <motion.div
+                    key={currentImageIndex}
+                    className={`absolute inset-0 w-full h-full ${heroImages[currentImageIndex].isLogo ? 'bg-surface flex items-center justify-center p-12' : ''}`}
+                    initial={{ x: "100%" }}
+                    animate={{ x: 0 }}
+                    exit={{ x: "-100%" }}
+                    transition={{ 
+                      x: { type: "spring", stiffness: 300, damping: 30 },
+                      opacity: { duration: 0.2 }
+                    }}
+                  >
+                    <img 
+                      src={heroImages[currentImageIndex].src}
+                      alt="Hero Showcase" 
+                      className={`w-full h-full ${heroImages[currentImageIndex].isLogo ? 'object-contain' : 'object-cover'}`}
+                    />
+                  </motion.div>
+                </AnimatePresence>
                  {/* Gradient Overlay for visual softness */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent pointer-events-none"></div>
              </div>

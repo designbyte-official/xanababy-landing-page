@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-8 text-center">
-             <a href="https://studio.designbyte.dev" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-muted/60 hover:text-primary transition-colors">
+             <a href="https://studio.designbyte.dev" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-muted/80 hover:text-primary transition-colors">
               <span>Redesigned by</span>
               <span className="font-bold">DesignByte Studio</span>
             </a>
