@@ -23,9 +23,9 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-background">
-      
+
       <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        
+
         {/* Text Content - Order 1 on Mobile now for better UX */}
         <div className="order-1 text-center lg:text-left pt-6 lg:pt-0">
           <motion.div
@@ -37,9 +37,9 @@ const Hero: React.FC = () => {
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
               <span className="text-xs font-bold tracking-widest uppercase text-secondary">Ciencia del Sueño Infantil</span>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl lg:text-6xl  2xl:text-7xl text-primary font-heading leading-[1.05] mb-6 md:mb-8 font-medium">
-              El sueño de tu bebé <br/>
+              El sueño de tu bebé <br />
               <span className="text-muted italic font-light">no es cuestión de suerte.</span>
             </h1>
 
@@ -49,21 +49,21 @@ const Hero: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
               {/* Primary Button */}
-              <Button 
-                href="#pricing" 
+              <Button
+                href="#pricing"
                 variant="primary"
                 size="lg"
-                className="w-full sm:w-auto"
+                className="w-full max-w-xs sm:w-auto"
               >
                 Ver Taller Gratuito
               </Button>
-              
+
               {/* Secondary Button */}
-              <Button 
+              <Button
                 onClick={() => setIsVideoOpen(true)}
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto bg-surface group border-primary/10 hover:border-primary pl-2 pr-6 !py-2.5"
+                className="w-full max-w-xs sm:w-auto bg-surface group border-primary/10 hover:border-primary pl-2 pr-6 !py-2.5"
               >
                 <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center group-hover:scale-110 transition-transform mr-3">
                   <Play size={14} fill="currentColor" className="ml-0.5" />
@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
                 Cómo funciona
               </Button>
             </div>
-            
+
             <div className="mt-10 md:mt-12 border-t border-border pt-8 flex items-center justify-center lg:justify-start gap-4">
               <div className="flex -space-x-4">
                 {[
@@ -84,11 +84,11 @@ const Hero: React.FC = () => {
               </div>
               <div className="text-sm text-muted pl-2 text-left">
                 <div className="flex items-center gap-1 text-secondary mb-0.5">
-                   <Star size={14} fill="currentColor" />
-                   <Star size={14} fill="currentColor" />
-                   <Star size={14} fill="currentColor" />
-                   <Star size={14} fill="currentColor" />
-                   <Star size={14} fill="currentColor" />
+                  <Star size={14} fill="currentColor" />
+                  <Star size={14} fill="currentColor" />
+                  <Star size={14} fill="currentColor" />
+                  <Star size={14} fill="currentColor" />
+                  <Star size={14} fill="currentColor" />
                 </div>
                 <span className="font-bold text-primary">20,000+ familias</span> descansadas
               </div>
@@ -97,42 +97,42 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Visual Content - Carousel with Shape */}
-        <motion.div 
+        <motion.div
           className="order-2 relative px-6 md:px-0"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
           <div className="relative">
-             {/* Decorative circle - Purple Tint */}
-             <div className="absolute top-10 right-10 w-64 h-64 bg-primary-light/40 rounded-full blur-3xl -z-10"></div>
-             
-             <div className="rounded-t-[10rem] rounded-b-[4rem] overflow-hidden border-[8px] border-surface relative z-10 h-[400px] md:h-[650px] bg-surface">
-                <AnimatePresence mode="popLayout">
-                  <motion.div
-                    key={currentImageIndex}
-                    className={`absolute inset-0 w-full h-full ${heroImages[currentImageIndex].isLogo ? 'bg-surface flex items-center justify-center p-12' : ''}`}
-                    initial={{ x: "100%" }}
-                    animate={{ x: 0 }}
-                    exit={{ x: "-100%" }}
-                    transition={{ 
-                      x: { type: "spring", stiffness: 300, damping: 30 },
-                      opacity: { duration: 0.2 }
-                    }}
-                  >
-                    <img 
-                      src={heroImages[currentImageIndex].src}
-                      alt="Hero Showcase" 
-                      className={`w-full h-full ${heroImages[currentImageIndex].isLogo ? 'object-contain' : 'object-cover'}`}
-                    />
-                  </motion.div>
-                </AnimatePresence>
-                 {/* Gradient Overlay for visual softness */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent pointer-events-none"></div>
-             </div>
-            
+            {/* Decorative circle - Purple Tint */}
+            <div className="absolute top-10 right-10 w-64 h-64 bg-primary-light/40 rounded-full blur-3xl -z-10"></div>
+
+            <div className="rounded-t-[10rem] rounded-b-[4rem] overflow-hidden border-[8px] border-surface relative z-10 h-[400px] md:h-[650px] bg-surface">
+              <AnimatePresence mode="popLayout">
+                <motion.div
+                  key={currentImageIndex}
+                  className={`absolute inset-0 w-full h-full ${heroImages[currentImageIndex].isLogo ? 'bg-surface flex items-center justify-center p-12' : ''}`}
+                  initial={{ x: "100%" }}
+                  animate={{ x: 0 }}
+                  exit={{ x: "-100%" }}
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.2 }
+                  }}
+                >
+                  <img
+                    src={heroImages[currentImageIndex].src}
+                    alt="Hero Showcase"
+                    className={`w-full h-full ${heroImages[currentImageIndex].isLogo ? 'object-contain' : 'object-cover'}`}
+                  />
+                </motion.div>
+              </AnimatePresence>
+              {/* Gradient Overlay for visual softness */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent pointer-events-none"></div>
+            </div>
+
             {/* Floating Tag */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -141,8 +141,8 @@ const Hero: React.FC = () => {
             >
               <p className="text-xs text-secondary uppercase tracking-widest mb-1 font-bold">Resultado Real</p>
               <div className="flex items-baseline gap-2">
-                 <span className="text-3xl md:text-4xl font-heading text-primary">10-12h</span>
-                 <span className="text-xs md:text-sm text-muted font-medium leading-tight">de sueño<br/>nocturno</span>
+                <span className="text-3xl md:text-4xl font-heading text-primary">10-12h</span>
+                <span className="text-xs md:text-sm text-muted font-medium leading-tight">de sueño<br />nocturno</span>
               </div>
             </motion.div>
           </div>
@@ -153,21 +153,21 @@ const Hero: React.FC = () => {
       {/* Video Modal Overlay - Functional YouTube Embed */}
       <AnimatePresence>
         {isVideoOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 bg-black/90 backdrop-blur-md"
             onClick={() => setIsVideoOpen(false)}
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               className="relative w-full max-w-5xl aspect-video bg-black rounded-3xl overflow-hidden border border-white/20"
               onClick={(e) => e.stopPropagation()}
             >
-              <motion.button 
+              <motion.button
                 onClick={() => setIsVideoOpen(false)}
                 className="absolute top-4 right-4 md:top-6 md:right-6 z-20 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-md border border-white/10"
                 whileHover={{ scale: 1.1 }}
@@ -175,14 +175,14 @@ const Hero: React.FC = () => {
               >
                 <X size={24} />
               </motion.button>
-              
-              <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/HKVPOpnyY5o?autoplay=1&rel=0&modestbranding=1" 
-                title="Xanababy Method Video" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/HKVPOpnyY5o?autoplay=1&rel=0&modestbranding=1"
+                title="Xanababy Method Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 className="w-full h-full"
               ></iframe>
